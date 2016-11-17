@@ -5,14 +5,14 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\UtilEncoding\Business;
+namespace Spryker\Service\UtilEncoding;
 
-use Spryker\Zed\Kernel\Business\AbstractFacade;
+use Spryker\Service\Kernel\AbstractService;
 
 /**
- * @method \Spryker\Zed\UtilEncoding\Business\UtilEncodingBusinessFactory getFactory()
+ * @method \Spryker\Service\UtilEncoding\UtilEncodingServiceFactory getFactory()
  */
-class UtilEncodingFacade extends AbstractFacade implements UtilEncodingFacadeInterface
+class UtilEncodingService extends AbstractService implements UtilEncodingServiceInterface
 {
 
     /**

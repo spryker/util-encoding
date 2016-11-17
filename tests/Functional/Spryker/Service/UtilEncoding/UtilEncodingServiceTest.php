@@ -5,10 +5,10 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Functional\Spryker\Zed\UtilEncoding\Business;
+namespace Functional\Spryker\Service\UtilEncoding\Business;
 
 use Codeception\TestCase\Test;
-use Spryker\Zed\UtilEncoding\Business\UtilEncodingFacade;
+use Spryker\Service\UtilEncoding\UtilEncodingService;
 
 /**
  * @group Functional
@@ -18,7 +18,7 @@ use Spryker\Zed\UtilEncoding\Business\UtilEncodingFacade;
  * @group Business
  * @group UtilEncodingFacadeTest
  */
-class UtilEncodingFacadeTest extends Test
+class UtilEncodingServiceTest extends Test
 {
 
     const JSON_ENCODED_VALUE = '{"1":"one","2":"two"}';
@@ -29,9 +29,9 @@ class UtilEncodingFacadeTest extends Test
     protected $jsonData = [1 => 'one', 2 => 'two'];
 
     /**
-     * @var \Spryker\Zed\UtilEncoding\Business\UtilEncodingFacade
+     * @var \Spryker\Service\UtilEncoding\UtilEncodingService
      */
-    protected $utilEncodingFacade;
+    protected $utilEncodingService;
 
     /**
      * @return void
@@ -40,7 +40,7 @@ class UtilEncodingFacadeTest extends Test
     {
         parent::setUp();
 
-        $this->utilEncodingFacade = new UtilEncodingFacade();
+        $this->utilEncodingService = new UtilEncodingService();
     }
 
     /**
@@ -48,7 +48,7 @@ class UtilEncodingFacadeTest extends Test
      */
     public function testEncodeJsonShouldReturnJsonEncodedValue()
     {
-        $jsonEncodeValue = $this->utilEncodingFacade->encodeJson($this->jsonData);
+        $jsonEncodeValue = $this->utilEncodingService->encodeJson($this->jsonData);
 
         $this->assertEquals(self::JSON_ENCODED_VALUE, $jsonEncodeValue);
     }
@@ -58,7 +58,7 @@ class UtilEncodingFacadeTest extends Test
      */
     public function testDecodeJsonShouldReturnAssocArray()
     {
-        $jsonDecodeValue = $this->utilEncodingFacade->decodeJson(self::JSON_ENCODED_VALUE, true);
+        $jsonDecodeValue = $this->utilEncodingService->decodeJson(self::JSON_ENCODED_VALUE, true);
 
         $this->assertEquals($this->jsonData, $jsonDecodeValue);
     }
@@ -68,7 +68,7 @@ class UtilEncodingFacadeTest extends Test
      */
     public function testDecodeJsonWhenAssocFlagIsOffShouldReturnStdObject()
     {
-        $jsonDecodeValue = $this->utilEncodingFacade->decodeJson(self::JSON_ENCODED_VALUE);
+        $jsonDecodeValue = $this->utilEncodingService->decodeJson(self::JSON_ENCODED_VALUE);
 
         $this->assertEquals((object)$this->jsonData, $jsonDecodeValue);
     }

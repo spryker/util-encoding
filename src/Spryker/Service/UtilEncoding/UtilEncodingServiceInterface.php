@@ -1,16 +1,15 @@
 <?php
-
 /**
  * Copyright © 2016-present Spryker Systems GmbH. All rights reserved.
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
+namespace Spryker\Service\UtilEncoding;
 
-namespace Spryker\Zed\UtilEncoding\Business;
 
 /**
- * @method \Spryker\Zed\UtilEncoding\Business\UtilEncodingBusinessFactory getFactory()
+ * @method \Spryker\Service\UtilEncoding\UtilEncodingServiceFactory getFactory()
  */
-interface UtilEncodingFacadeInterface
+interface UtilEncodingServiceInterface
 {
 
     /**
@@ -20,8 +19,8 @@ interface UtilEncodingFacadeInterface
      * @api
      *
      * @param string $jsonValue
-     * @param int|null $options
-     * @param int|null $depth
+     * @param null $options
+     * @param null $depth
      *
      * @return string
      */
@@ -35,11 +34,10 @@ interface UtilEncodingFacadeInterface
      *
      * @param string $jsonValue
      * @param bool $assoc
-     * @param null $depth
-     * @param null $options
+     * @param int|null $depth
+     * @param int|null $options
      *
      * @return array
      */
     public function decodeJson($jsonValue, $assoc = false, $depth = null, $options = null);
-
 }

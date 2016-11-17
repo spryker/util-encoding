@@ -5,7 +5,7 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Shared\UtilEncoding;
+namespace Spryker\Service\UtilEncoding\Model;
 
 interface JsonInterface
 {

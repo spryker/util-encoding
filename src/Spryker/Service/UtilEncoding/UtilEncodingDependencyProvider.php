@@ -5,10 +5,11 @@
  * Use of this software requires acceptance of the Evaluation License Agreement. See LICENSE file.
  */
 
-namespace Spryker\Zed\UtilEncoding;
+namespace Spryker\Service\UtilEncoding;
 
-use Spryker\Zed\Kernel\AbstractBundleConfig;
+use Spryker\Service\Kernel\AbstractBundleDependencyProvider;
 
-class UtilEncodingConfig extends AbstractBundleConfig
+class UtilEncodingDependencyProvider extends AbstractBundleDependencyProvider
 {
+
 }
