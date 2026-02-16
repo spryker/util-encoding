@@ -33,7 +33,7 @@ class Json implements JsonInterface
             $depth = static::DEFAULT_DEPTH;
         }
 
-        $value = json_encode($value, $options, $depth);
+        $value = json_encode($value, $options, max(1, $depth));
 
         return $value !== false ? $value : null;
     }
@@ -56,6 +56,6 @@ class Json implements JsonInterface
             $depth = static::DEFAULT_DEPTH;
         }
 
-        return json_decode((string)$jsonValue, $assoc, $depth, $options);
+        return json_decode((string)$jsonValue, $assoc, max(1, $depth), $options);
     }
 }
