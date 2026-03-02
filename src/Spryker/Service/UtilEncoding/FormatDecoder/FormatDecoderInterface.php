@@ -9,9 +9,6 @@ namespace Spryker\Service\UtilEncoding\FormatDecoder;
 
 interface FormatDecoderInterface
 {
-    /**
-     * @return string
-     */
     public function getFormatName(): string;
 
     /**

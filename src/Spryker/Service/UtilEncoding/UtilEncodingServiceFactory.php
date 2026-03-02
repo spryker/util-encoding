@@ -29,9 +29,6 @@ class UtilEncodingServiceFactory extends AbstractServiceFactory
         return new Json();
     }
 
-    /**
-     * @return \Spryker\Service\UtilEncoding\Encoder\EncoderInterface
-     */
     public function createEncoder(): EncoderInterface
     {
         return new Encoder(
@@ -39,9 +36,6 @@ class UtilEncodingServiceFactory extends AbstractServiceFactory
         );
     }
 
-    /**
-     * @return \Spryker\Service\UtilEncoding\Decoder\DecoderInterface
-     */
     public function createDecoder(): DecoderInterface
     {
         return new Decoder(
@@ -70,9 +64,6 @@ class UtilEncodingServiceFactory extends AbstractServiceFactory
         ];
     }
 
-    /**
-     * @return \Spryker\Service\UtilEncoding\FormatEncoder\FormatEncoderInterface
-     */
     public function createJsonFormatEncoder(): FormatEncoderInterface
     {
         return new JsonFormatEncoder(
@@ -80,9 +71,6 @@ class UtilEncodingServiceFactory extends AbstractServiceFactory
         );
     }
 
-    /**
-     * @return \Spryker\Service\UtilEncoding\FormatDecoder\FormatDecoderInterface
-     */
     public function createJsonFormatDecoder(): FormatDecoderInterface
     {
         return new JsonFormatDecoder(
@@ -90,9 +78,6 @@ class UtilEncodingServiceFactory extends AbstractServiceFactory
         );
     }
 
-    /**
-     * @return \Spryker\Service\UtilEncoding\FormatDecoder\FormatDecoderInterface
-     */
     public function createQueryStringFormatDecoder(): FormatDecoderInterface
     {
         return new QueryStringFormatDecoder();

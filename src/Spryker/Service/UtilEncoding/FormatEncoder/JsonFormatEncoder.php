@@ -16,17 +16,11 @@ class JsonFormatEncoder implements FormatEncoderInterface
      */
     protected $json;
 
-    /**
-     * @param \Spryker\Service\UtilEncoding\Model\JsonInterface $json
-     */
     public function __construct(JsonInterface $json)
     {
         $this->json = $json;
     }
 
-    /**
-     * @return string
-     */
     public function getFormatName(): string
     {
         return 'json';

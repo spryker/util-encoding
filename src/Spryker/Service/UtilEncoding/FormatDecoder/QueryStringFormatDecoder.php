@@ -9,19 +9,11 @@ namespace Spryker\Service\UtilEncoding\FormatDecoder;
 
 class QueryStringFormatDecoder implements FormatDecoderInterface
 {
-    /**
-     * @return string
-     */
     public function getFormatName(): string
     {
         return 'querystring';
     }
 
-    /**
-     * @param string $data
-     *
-     * @return array
-     */
     public function decode(string $data): array
     {
         $result = [];

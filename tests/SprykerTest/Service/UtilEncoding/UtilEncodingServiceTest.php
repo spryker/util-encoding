@@ -44,9 +44,6 @@ JSON;
      */
     protected $utilEncodingService;
 
-    /**
-     * @return void
-     */
     public function setUp(): void
     {
         parent::setUp();
@@ -54,9 +51,6 @@ JSON;
         $this->utilEncodingService = new UtilEncodingService();
     }
 
-    /**
-     * @return void
-     */
     public function testEncodeJsonWithDefaultOptions(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->encodeJson($this->jsonData);
@@ -64,9 +58,6 @@ JSON;
         $this->assertSame(static::JSON_ENCODED_VALUE, $jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testEncodeArrayEmpty(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->encodeJson([]);
@@ -74,9 +65,6 @@ JSON;
         $this->assertSame('[]', $jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testEncodeString(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->encodeJson('A string!');
@@ -84,9 +72,6 @@ JSON;
         $this->assertSame('"A string!"', $jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testEncodeBooleanAndNull(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->encodeJson(true);
@@ -102,9 +87,6 @@ JSON;
         $this->assertSame('null', $jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testEncodeInvalid(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->encodeJson(['x' => ['y' => 'z']], JSON_NUMERIC_CHECK, 1);
@@ -112,9 +94,6 @@ JSON;
         $this->assertNull($jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testEncodeJsonWithPrettyPrintIncluded(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->encodeJson($this->jsonData, Json::DEFAULT_OPTIONS | JSON_PRETTY_PRINT);
@@ -122,9 +101,6 @@ JSON;
         $this->assertSame(static::JSON_ENCODED_VALUE_PRETTY_PRINT, $jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testDecodeJsonShouldReturnAssocArray(): void
     {
         $jsonDecodeValue = $this->utilEncodingService->decodeJson(static::JSON_ENCODED_VALUE, true);
@@ -144,9 +120,6 @@ JSON;
         $this->assertEquals((object)$this->jsonData, $jsonDecodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testDecodeArrayEmpty(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->decodeJson('[]');
@@ -154,9 +127,6 @@ JSON;
         $this->assertSame([], $jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testDecodeStringEmpty(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->decodeJson('');
@@ -192,9 +162,6 @@ JSON;
         $this->assertFalse($jsonEncodeValue);
     }
 
-    /**
-     * @return void
-     */
     public function testDecodeNull(): void
     {
         $jsonEncodeValue = $this->utilEncodingService->decodeJson('null');
