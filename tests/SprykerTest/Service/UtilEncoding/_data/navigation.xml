@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<config>
+    <acl>
+        <label>Users Control</label>
+        <pages>
+            <roles>
+                <label>Roles</label>
+                <pages>
+                    <role-create>
+                        <label>Create new Role</label>
+                        <visible>0</visible>
+                    </role-create>
+                </pages>
+            </roles>
+        </pages>
+    </acl>
+</config>

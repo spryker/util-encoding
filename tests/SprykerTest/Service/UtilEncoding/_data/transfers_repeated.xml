@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<transfers xmlns="spryker:transfer-01">
+    <transfer name="First">
+        <property name="alpha" type="string"/>
+        <property name="beta" type="int"/>
+    </transfer>
+    <transfer name="Second">
+        <property name="gamma" type="bool"/>
+    </transfer>
+</transfers>

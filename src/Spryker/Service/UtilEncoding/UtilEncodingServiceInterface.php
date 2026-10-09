@@ -73,4 +73,41 @@ interface UtilEncodingServiceInterface
      * @return array|null
      */
     public function decodeFromFormat(string $data, string $format): ?array;
+
+    /**
+     * Specification:
+     * - Reads an XML file into a nested array.
+     * - Element attributes become string keys next to the element's children.
+     * - Text of an element that also carries attributes is stored under the `_` key.
+     * - A repeated element name becomes a numerically indexed list; a single occurrence stays
+     *   associative.
+     * - Values are never type-coerced; every leaf is a string.
+     * - `<foo/>` reads as an empty array, `<foo></foo>` as an empty string.
+     * - Throws a `XmlReadException` when the file is missing or not well formed.
+     *
+     * @api
+     *
+     * @param string $xmlFilePath
+     *
+     * @throws \Spryker\Service\UtilEncoding\Exception\XmlReadException
+     *
+     * @return array<mixed>
+     */
+    public function convertXmlFileToArray(string $xmlFilePath): array;
+
+    /**
+     * Specification:
+     * - Reads an XML string into a nested array.
+     * - Applies the same shape rules as {@link \Spryker\Service\UtilEncoding\UtilEncodingServiceInterface::convertXmlFileToArray()}.
+     * - Throws a `XmlReadException` when the string is not well formed.
+     *
+     * @api
+     *
+     * @param string $xmlContent
+     *
+     * @throws \Spryker\Service\UtilEncoding\Exception\XmlReadException
+     *
+     * @return array<mixed>
+     */
+    public function convertXmlStringToArray(string $xmlContent): array;
 }

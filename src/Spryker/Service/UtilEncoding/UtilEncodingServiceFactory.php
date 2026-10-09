@@ -18,6 +18,8 @@ use Spryker\Service\UtilEncoding\FormatDecoder\QueryStringFormatDecoder;
 use Spryker\Service\UtilEncoding\FormatEncoder\FormatEncoderInterface;
 use Spryker\Service\UtilEncoding\FormatEncoder\JsonFormatEncoder;
 use Spryker\Service\UtilEncoding\Model\Json;
+use Spryker\Service\UtilEncoding\Model\Xml;
+use Spryker\Service\UtilEncoding\Model\XmlInterface;
 
 class UtilEncodingServiceFactory extends AbstractServiceFactory
 {
@@ -81,5 +83,10 @@ class UtilEncodingServiceFactory extends AbstractServiceFactory
     public function createQueryStringFormatDecoder(): FormatDecoderInterface
     {
         return new QueryStringFormatDecoder();
+    }
+
+    public function createXmlReader(): XmlInterface
+    {
+        return new Xml();
     }
 }

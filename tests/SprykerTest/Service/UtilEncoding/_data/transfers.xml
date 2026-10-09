@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<transfers xmlns="spryker:transfer-01">
+    <transfer name="Single">
+        <property name="alpha" type="string"/>
+    </transfer>
+</transfers>

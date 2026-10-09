@@ -88,4 +88,40 @@ class UtilEncodingService extends AbstractService implements UtilEncodingService
             ->createDecoder()
             ->decodeFromFormat($data, $format);
     }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param string $xmlFilePath
+     *
+     * @throws \Spryker\Service\UtilEncoding\Exception\XmlReadException
+     *
+     * @return array<mixed>
+     */
+    public function convertXmlFileToArray(string $xmlFilePath): array
+    {
+        return $this->getFactory()
+            ->createXmlReader()
+            ->readFile($xmlFilePath);
+    }
+
+    /**
+     * {@inheritDoc}
+     *
+     * @api
+     *
+     * @param string $xmlContent
+     *
+     * @throws \Spryker\Service\UtilEncoding\Exception\XmlReadException
+     *
+     * @return array<mixed>
+     */
+    public function convertXmlStringToArray(string $xmlContent): array
+    {
+        return $this->getFactory()
+            ->createXmlReader()
+            ->readString($xmlContent);
+    }
 }

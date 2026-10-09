@@ -4,8 +4,11 @@
     "description": "UtilEncoding module",
     "license": "proprietary",
     "require": {
+        "ext-libxml": "*",
+        "ext-xmlreader": "*",
         "php": ">=8.3",
-        "spryker/kernel": "^3.30.0"
+        "spryker/kernel": "^3.30.0",
+        "spryker/symfony": "^3.0.0"
     },
     "require-dev": {
         "spryker/code-sniffer": "*",
